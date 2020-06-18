@@ -1,13 +1,16 @@
 <?php
 
-class About
+class About extends Controller
 {
-  public function index($nama = 'Gunawan', $pekerjaan = 'Dosen')
+  public function index($nama = 'Gunawan', $pekerjaan = 'Dosen', $umur = 32)
   {
-    echo "Halo, nama saya $nama, saya adalah seorang $pekerjaan";
+    $data['nama'] = $nama;
+    $data['pekerjaan'] = $pekerjaan;
+    $data['umur'] = $umur;
+    $this->view('about/index', $data);
   }
   public function page()
   {
-    echo 'About/page';
+    $this->view('about/page');
   }
 }
