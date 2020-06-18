@@ -4,7 +4,7 @@ class App
 {
   protected $controller = 'Home';
   protected $method = 'index';
-  protected $param = [];
+  protected $params = [];
 
   public function __construct()
   {
@@ -29,11 +29,11 @@ class App
 
     // params
     if (!empty($url)) {
-      $this->param = array_values($url);
+      $this->params = array_values($url);
     }
 
     // Jalankan Controller & method, serta kirimkan param jika ada
-    call_user_func_array([$this->controller, $this->method], $this->param);
+    call_user_func_array([$this->controller, $this->method], $this->params);
   }
 
   public function parseURL()
